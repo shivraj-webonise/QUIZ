@@ -41,8 +41,9 @@ if(isset($_POST['submit']))
 }
 
 
-    
-$finalresult = "insert into user(username,totalques,answerscorrect) values ('shivraj',5,$result) ";
+$name = $_POST['user'];
+$pass = $_POST['password'];  
+$finalresult = "insert into user(username,totalques,answerscorrect) values ('$name',5,$result) ";
 $queryresult = mysqli_query($con,$finalresult);
 
 if($queryresult)

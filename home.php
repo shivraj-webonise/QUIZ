@@ -11,6 +11,7 @@ if($con)
 mysqli_select_db($con, 'quizdbase');
 
 
+
 ?>
 <!DOCTYPE html>
 
@@ -62,7 +63,7 @@ mysqli_select_db($con, 'quizdbase');
             }
 
             ?>
-                        <input type="submit" name="submit" value="Submit" class="btn btn-success m-auto">    
+            <input type="submit" name="submit" value="Submit" class="btn btn-success m-auto">    
             </form>  
             </div>
         </div>
