@@ -29,10 +29,10 @@ mysqli_select_db($con, 'quizdbase');
 
             for($i = 1; $i<6;$i++)
             {
-            $q= 'select * from questions where qid = $i';
-
-            $query = mysqli_query($con, $q);
-
+            $q= "select * from questions where qid = '$i' ";
+               
+            $query= mysqli_query($con, $q);
+            
             while ($rows = mysqli_fetch_array($query)){
                 ?>
 
@@ -48,7 +48,7 @@ mysqli_select_db($con, 'quizdbase');
                             while($rows = mysqli_fetch_array($query)){
                                 ?>
                                 <div class="card-body">
-                                    <input type="radio" name="quizcheck[]" value="<?php echo $rows['aid']; ?>">
+                                    <input type="radio" name="quizcheck[<?php echo $rows['ans_id'];?>]" value="<?php echo $rows['aid']; ?>">
                                     <?php echo $rows['answer'];?>
                                 </div>
 

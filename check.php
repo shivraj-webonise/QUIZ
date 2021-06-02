@@ -3,13 +3,10 @@
 session_start();
 
 $con = mysqli_connect('localhost','admin','Shivraj@24');
-if($con)
-{
-    echo 'success';
-}
+
 mysqli_select_db($con,'quizdbase');
 
-        $result= 0;
+$result= 0;
 
 if(isset($_POST['submit']))
 {
@@ -44,7 +41,18 @@ if(isset($_POST['submit']))
 }
 
 
+    
+$finalresult = "insert into user(username,totalques,answerscorrect) values ('shivraj',5,$result) ";
+$queryresult = mysqli_query($con,$finalresult);
 
-$finalresult = "insert into user(username,totalques,answerscorrect) values ('shivraj,'5,'$result') ";
+if($queryresult)
+{
+    echo 'success \n';
+}
+else
+{
+    echo 'not \n';
+}
+
 
 ?>
